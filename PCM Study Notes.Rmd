@@ -45,8 +45,11 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+```{r cache = TRUE}
+x = 63:100
+p = sum(choose(100,x)*0.5^100)
+print(2*p)
+binom.test(63,100,p=0.5,alternative = "two.sided")
 ```
 
 ## Including Plots
