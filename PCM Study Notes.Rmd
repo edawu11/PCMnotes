@@ -52,6 +52,33 @@ print(2*p)
 binom.test(63,100,p=0.5,alternative = "two.sided")
 ```
 
+# Chapter 7
+```{r cache=TRUE}
+Q = matrix(c(-0.5,0.5,0.5,-0.5),2,2)
+k = 2
+t = 3
+p_ii = 1/k+(k-1)/k*exp(-k*abs(Q[1,1])*t)
+p_ij = 1/k-1/k*exp(-k*Q[1,2]*t)
+print(Q)
+print(p_ii)
+print(p_ij)
+0.145+0.095*4
+```
+
+```{r}
+d = c(0.1,0.2,0.3,0.5)
+D = d*diag(4)
+A = matrix(c(-6,1,2,3,
+             1,-6,4,1,
+             2,4,-8,2,
+             3,1,2,-6),4,4)
+T1 = D%*%A
+T2 = D^(1/2)%*%A%*%D^(1/2)
+T1;T2
+```
+
+
+
 ## Including Plots
 
 You can also embed plots, for example:
